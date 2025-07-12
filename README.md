@@ -1,2 +1,0 @@
-- [Галерея](https://oleksandrvertebnyi.github.io/goit-js-hw-09/1-gallery.html)
-- [Форма](https://oleksandrvertebnyi.github.io/goit-js-hw-09/2-form.html)
