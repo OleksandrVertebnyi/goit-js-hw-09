@@ -6,13 +6,17 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/goit-js-hw-09/',
+    root: 'src',  // корень проекта — папка src
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src',
     build: {
       sourcemap: true,
+      outDir: '../dist',
+      emptyOutDir: true,
       rollupOptions: {
+        // Входные точки — все html из src
         input: glob.sync('./src/*.html'),
         output: {
           manualChunks(id) {
@@ -20,13 +24,13 @@ export default defineConfig(({ command }) => {
               return 'vendor';
             }
           },
-          entryFileNames: chunkInfo => {
+          entryFileNames(chunkInfo) {
             if (chunkInfo.name === 'commonHelpers') {
               return 'commonHelpers.js';
             }
             return '[name].js';
           },
-          assetFileNames: assetInfo => {
+          assetFileNames(assetInfo) {
             if (assetInfo.name && assetInfo.name.endsWith('.html')) {
               return '[name].[ext]';
             }
@@ -34,15 +38,16 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
-      emptyOutDir: true,
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      FullReload(['./src/**/*.html']),
       SortCss({
         sort: 'mobile-first',
       }),
     ],
+    optimizeDeps: {
+      include: ['simplelightbox'],  // обязательно для корректной работы импорта
+    },
   };
 });
