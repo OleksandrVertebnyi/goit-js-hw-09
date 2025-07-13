@@ -1,18 +1,141 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  margin: 24px 156px 24px 156px;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.gallery-item {
+  flex-basis: calc(33.333% - 16px);
+  box-sizing: border-box;
+  
+}
+
+.gallery-link {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  
+}
+
+.gallery-link:hover,
+.gallery-link:focus {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+   
+}
+
+
+
+body {
+  font-family: Arial, sans-serif, Montserrat;
+  background: #f9f9f9;
+  padding: 20px;
+  color: #333;
+}
+
+
+
+/* Контейнер форми */
+.feedback-form {
+  
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 24px 32px;
+  background:  rgb(255, 255, 255);;
+  border-radius: 8px;
+  box-sizing: border-box;
+ border: 1px solid rgb(128, 128, 128);
+ border-radius: 4px;
+ 
+ align-self: flex-start;
+ 
+
+}
+
+/*  label */
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 16px;
+  color:  rgb(46, 47, 66);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/*  input і textarea */
+.feedback-form input[type="email"],
+.feedback-form textarea {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  box-sizing: border-box;
+border: 1px solid rgb(0, 0, 0);
+border-radius: 4px;
+
+}
+
+/* Кнопка */
+.feedback-form button {
+  cursor: pointer;
+  background-color: rgb(78, 117, 255);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px 8px 16px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin-top: 16px;
+}
+
+.feedback-form button:hover,
+.feedback-form button:focus {
+  background-color: rgb(108, 140, 255);
+  
+  outline: none;
+}
+
+/* Список навігації зверху */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover,
+ul li a:focus {
+  color: #0056b3;
+  outline: none;
+}
+
