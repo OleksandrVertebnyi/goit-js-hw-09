@@ -38,12 +38,17 @@
 
 
 
+
 body {
   font-family: Arial, sans-serif, Montserrat;
   background: #f9f9f9;
   padding: 20px;
   color: #333;
+  background-color: #2E2F42 !important;
+  
 }
+
+
 
 
 
@@ -139,3 +144,6 @@ ul li a:focus {
   outline: none;
 }
 
+.sl-overlay {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
