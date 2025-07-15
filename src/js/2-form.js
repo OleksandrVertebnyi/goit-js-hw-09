@@ -34,6 +34,7 @@ function loadFromLocalStorage() {
     }
 }
 
+loadFromLocalStorage();
 
 form.addEventListener('input', event => {
     const { name, value } = event.target;
@@ -65,4 +66,3 @@ form.addEventListener('submit', event => {
 });
 
 
-loadFromLocalStorage();
